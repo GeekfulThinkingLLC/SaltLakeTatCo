@@ -6,12 +6,24 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# User.create!(
-#   email: "admin@admin.com",
-#   password: "hellohello",
-#   password_confirmation: "hellohello",
-#   name: "Admin Admin",
-#   roles: "site_admin"
-#   )
+10.times do |artist|
+  Artist.create!(
+    email: "artist#{artist}@example.com",
+    password: "password",
+    password_confirmation: "password",
+    name: "Artist #{artist}",
+    roles: "artist"
+  )
+end
 
-# puts "1 Admin user created"
+puts "10 artists created"
+
+Artist.create!(
+  email: "admin@example.com",
+  password: "password",
+  password_confirmation: "password",
+  name: "Admin Admin",
+  roles: "site_admin"
+)
+
+puts "1 admin created"
