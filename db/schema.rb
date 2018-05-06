@@ -10,15 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180504233910) do
+ActiveRecord::Schema.define(version: 20180506220730) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "appointments", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "img"
+    t.string "phone"
+    t.string "tat_location"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "artists", force: :cascade do |t|
     t.text "name"
     t.text "email"
-    t.string "calendar"
+    t.string "calendar_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "calendar_type"
+  end
+
+  create_table "galleries", force: :cascade do |t|
+    t.integer "artist_id"
+    t.string "thumbnail"
+    t.string "main"
+    t.text "images", default: [], array: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
