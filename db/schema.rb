@@ -29,9 +29,9 @@ ActiveRecord::Schema.define(version: 20180506220730) do
     t.text "name"
     t.text "email"
     t.string "calendar_id"
+    t.string "calendar_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "calendar_type"
   end
 
   create_table "galleries", force: :cascade do |t|

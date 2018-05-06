@@ -1,6 +1,12 @@
 class ArtistChangeCalendarName < ActiveRecord::Migration[5.1]
   def change
-    rename_column :artists, :calendar, :calendar_id
-    add_column :artists, :calendar_type, :string
+    create_table :artists do |t|
+      t.text :name
+      t.text :email
+      t.string :calendar_id
+      t.string :calendar_type
+
+      t.timestamps
+    end
   end
 end
