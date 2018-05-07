@@ -1,1 +1,22 @@
-<div>New Form Page for Artist man card</div>
+<%#= render "form" %>
+
+<div class="container">
+	<%= form_with model: @artist do |f| %>
+		<div>
+			<%= f.text_field :name, placeholder: "Full Name", class: "form Control" %>
+		</div>
+		<div>
+			<%= f.text_field :style, placeholder: "Tattooing Style", class: "form Control" %>
+		</div>
+		<div>
+			<%= f.text_field :description, placeholder: "A Little About You", class: "form Control" %>
+		</div>
+		<div>
+			<%= f.file_field :img, placeholder: "Profile Picture", class: "form Control" %>
+		</div>
+		<br>
+		<div>
+			<%= f.submit "Submit", class: "form-control" %>
+		</div>
+	<% end %>
+</div>
