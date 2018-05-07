@@ -66,3 +66,4 @@ class ArtistsController < ApplicationController
 		params.require(:artist).permit(:name, :img, :style, :description)
 	end
 end
+end
