@@ -1,5 +1,5 @@
 <div class="container">
-	<%= form_with(model: artist) do |f| %>
+	<%= form_for @artist do |f| %>
 		<div>
 			<%= f.text_field :name, placeholder: "Full Name", class: "form Control" %>
 		</div>

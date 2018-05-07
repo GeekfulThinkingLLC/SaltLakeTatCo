@@ -33,7 +33,7 @@ class ArtistsController < ApplicationController
 
 	def update
 		logged_artist = Artist.find(params[:id])
-		if (logged_in?(:artist) || logged_in?(:site_admin)) && (params[:id] == logged_artist)
+		if (logged_in?(:artist) || logged_in?(:site_admin)) && (params[:id] == current_artist)
 			@artist = Artist.find(params[:id])
 			respond_to do |format|
 	      if @artist.update(artist_params)
