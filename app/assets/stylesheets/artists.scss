@@ -1,5 +1,11 @@
+@import "global.scss";
+
 .flex-test {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+}
+
+.card-body {
+  background-color: $background-color;
 }

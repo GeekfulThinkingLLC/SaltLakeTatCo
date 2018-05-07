@@ -1,37 +1,35 @@
-<!-- .navbar -->
-<nav class="navbar navbar-full navbar-dark navbar-custom">
-  <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#mainNavbarCollapse">
-  &#9776;
-  </button>
-  <a class="navbar-brand" href="/">
-    <img class="img-rounded navbar-img" src="https://s3-us-west-2.amazonaws.com/sltc-studios/tatmachine.jpg">
-  </a>
-  <div class="collapse navbar-toggleable-md" id="mainNavbarCollapse">
-    <ul class="nav navbar-nav nav-link-custom">
-      <li class="nav-item">
-        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/about">About</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/artists">Artist</a>
-      </li>
-      <li class="nav-item">
-        <%= link_to "Contact", contact_path, class: "nav-link" %>      
-      </li>
-      <div>
-      <% if !artist_signed_in? %>
+<nav class="navbar navbar-dark bg-dark">
+  <div class="pos-f-t">
+    <div class="collapse navbar-toggleable-md" id="mainNavbarCollapse">
+      <ul class="nav navbar-nav nav-link-custom">
         <li class="nav-item">
-          <%= link_to "Login", new_artist_session_path, class: "nav-link" %>
+          <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
         </li>
-      <% else %>
         <li class="nav-item">
-          <%= link_to "Logout", destroy_artist_session_path, :method => :delete, class: "nav-link" %>
+          <a class="nav-link" href="/about">About</a>
         </li>
-      <% end %> 
-      </div>
-    </ul>
+        <li class="nav-item">
+          <a class="nav-link" href="/artists">Artist</a>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Contact", contact_path, class: "nav-link" %>      
+        </li>
+        <div>
+        <% if !artist_signed_in? %>
+          <li class="nav-item">
+            <%= link_to "Login", new_artist_session_path, class: "nav-link" %>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to "Logout", destroy_artist_session_path, :method => :delete, class: "nav-link" %>
+          </li>
+        <% end %> 
+        </div>
+      </ul>
+    </div>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavbarCollapse" aria-controls="mainNavbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
   </div>
+  <%= image_tag("https://s3-us-west-2.amazonaws.com/sltc-studios/tatmachine.jpg", class: "img-rounded navbar-img") %>
 </nav>
-<!-- /.navbar -->
