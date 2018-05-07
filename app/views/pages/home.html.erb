@@ -1,2 +1,18 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container">
+	<div class="row">
+		<div class="col-md-6">
+
+		</div>
+		<div class="col-md-6">
+			<div class="nav-link">
+				<%= link_to "Checkout Our Artists!", artists_path, class: "btn btn-lg btn-primary form-control" %>
+			</div>
+			<div class="nav-link">
+				<%= link_to "Talk With An Artist!", new_appointment_path, class: "btn btn-lg btn-primary form-control" %>
+			</div>
+			<div class="nav-link">
+				<%= link_to "A Little About Salt Lake Tattoo Company", about_path, class: "btn btn-lg btn-primary form-control" %>
+			</div>
+		</div>
+	</div>
+</div>
