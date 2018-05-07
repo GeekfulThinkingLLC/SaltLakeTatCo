@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   
   resources :artists
   resources :appointments
-  resources :galleries
+  resources :tattoos
 
   root to: "pages#home"
 end

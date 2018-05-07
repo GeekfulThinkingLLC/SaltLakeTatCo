@@ -15,4 +15,5 @@ class Artist < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   mount_uploader :img, ImgUploader
+  has_many :tattoo
 end
