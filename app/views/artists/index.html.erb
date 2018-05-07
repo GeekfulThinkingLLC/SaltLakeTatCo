@@ -1,8 +1,10 @@
 <div>
 	<% @artists.each do |a| %>
+	<div class="container">
 		<%= a.name %>
 		<%= a.style %>
 		<%= a.description %>
 		<%= a.img %>
+	</div>	
 	<% end %>
 </div>

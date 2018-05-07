@@ -18,8 +18,19 @@
         <a class="nav-link" href="/artists">Artist</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/contact">Contact</a>
+        <%= link_to "Contact", contact_path, class: "nav-link" %>      
       </li>
+      <div>
+      <% if !artist_signed_in? %>
+        <li class="nav-item">
+          <%= link_to "Login", new_artist_session_path, class: "nav-link" %>
+        </li>
+      <% else %>
+        <li class="nav-item">
+          <%= link_to "Logout", destroy_artist_session_path, :method => :delete, class: "nav-link" %>
+        </li>
+      <% end %> 
+      </div>
     </ul>
   </div>
 </nav>

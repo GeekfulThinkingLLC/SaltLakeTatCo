@@ -38,7 +38,7 @@ class ArtistsController < ApplicationController
 			@artist = Artist.find(params[:id])
 			respond_to do |format|
 	      if @artist.update(artist_params)
-	        format.html { redirect_to artists_path, notice: '' }
+	        format.html { redirect_to artists_path, notice: 'Successfully updated profile!' }
 	      else
 	        format.html { render :edit }
 	      end
@@ -66,4 +66,4 @@ class ArtistsController < ApplicationController
 		params.require(:artist).permit(:name, :img, :style, :description)
 	end
 end
-end
+
