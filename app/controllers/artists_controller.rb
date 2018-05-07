@@ -15,12 +15,11 @@ class ArtistsController < ApplicationController
 	end
 
 	def create
-		# if logged_in?(:admin)
+		artist_params.img = params[:img]
 			@artist = Artist.new(artist_params)
-			@artist.img = params[:img]
 			respond_to do |format|
 				if @artist.save
-					format.html { redirect_to root_path, notice: "New artist created"}
+					format.html { redirect_to @artist, notice: "New artist created"}
 				else
 					format.html { redirect_to new_artist_path, notice: ""}
 				end
@@ -65,5 +64,4 @@ class ArtistsController < ApplicationController
 	def artist_params
 		params.require(:artist).permit(:name, :img, :style, :description)
 	end
-end
 end

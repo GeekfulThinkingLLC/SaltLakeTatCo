@@ -1,8 +1,12 @@
-<div>
-	<% @artists.each do |a| %>
-		<%= a.name %>
-		<%= a.style %>
-		<%= a.description %>
-		<%= a.img %>
-	<% end %>
+<div class="flex-test">
+  <% @artists.each do |a| %>
+    <div class="card" style="width: 18rem;">
+      <%= image_tag("ducky", class: "card-img-top") %>
+      <div class="card-body">
+        <h5 class="card-title"><%= a.name %></h5>
+        <p class="card-text"><%= a.description %></p>
+        <%= link_to "See Artist Gallery", artist_path(a), class: "btn btn-primary" %>
+      </div>
+    </div>
+  <% end %>
 </div>

@@ -12,7 +12,9 @@
     password: "password",
     password_confirmation: "password",
     name: "Artist #{artist}",
-    roles: "artist"
+    roles: "artist",
+    description: "Artist ##{artist} of Salt Lake Tattoo Company",
+    style: "Secret #{artist} Style",
   )
 end
 
